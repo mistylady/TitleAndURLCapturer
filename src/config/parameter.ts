@@ -15,4 +15,4 @@ export const PAGE_TEXTS = {
   }
 }
 
-export const DEFAULT_TITLE = "Export_from_Title&URLCapture"
+export const DEFAULT_TITLE = "Export_from_Title&URLCapturer"
