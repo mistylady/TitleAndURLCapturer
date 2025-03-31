@@ -5,7 +5,7 @@ export const MESSAGE_TEXTS = {
 }
 
 export const PAGE_TEXTS = {
-  header: "Title & URL Capture",
+  header: "Title & URL Capturer",
   input: {
     placeholder: "File name (no extension)"
   },
