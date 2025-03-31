@@ -1,5 +1,5 @@
 {
-  "name": "TitleAndURLCapturer",
+  "name": "title-and-url-capturer",
   "displayName": "Title and url capturer",
   "version": "0.0.1",
   "description": "capture titile and url",
@@ -29,7 +29,9 @@
       "https://*/*"
     ],
     "permissions": [
-      "tabs"
+      "clipboardWrite",
+      "activeTab",
+      "downloads"
     ]
   }
 }
