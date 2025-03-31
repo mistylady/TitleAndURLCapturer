@@ -4,7 +4,7 @@ const generateMarkDownContent = (params: {
   title: string
   content: string
 }): string => {
-  return `## ${params.title || DEFAULT_TITLE}\n${params.content}`
+  return `## ${params.title || DEFAULT_TITLE}\n\n${params.content}`
 }
 
 export const exportToMarkDown = (params: {
