@@ -7,5 +7,5 @@ const getTitleAndURL = async () => {
 
 export const getFormattedTitleAndURL = async () => {
   const { tabsInfoList } = await getTitleAndURL()
-  return tabsInfoList.map((tab) => `- ${tab.title}\n\t- ${tab.url}`).join("\n")
+  return tabsInfoList.map((tab) => `- ${tab.title}\n\t- ${decodeURI(tab.url)}`).join("\n")
 }
