@@ -1,6 +1,9 @@
 export const MESSAGE_TEXTS = {
-  default: "Perform any operation !",
-  copied: "Copied to Clipboard !",
+  default: "Let's Copy or Export !",
+  copied: {
+    success: "Copied to Clipboard !",
+    failure: "Copy to Clipboard Failed !"
+  },
   exported: "Exported to MarkDown !"
 }
 

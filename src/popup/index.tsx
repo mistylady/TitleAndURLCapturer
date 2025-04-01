@@ -17,8 +17,8 @@ const IndexPopup = () => {
   const handleClickCopyButton = async(e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const formattedTitleAndURL: string = await getFormattedTitleAndURL()
-    await copyToClipboard({ text: formattedTitleAndURL })
-    setMessage(MESSAGE_TEXTS.copied)
+    const result: boolean = await copyToClipboard({ text: formattedTitleAndURL })
+    setMessage(result ? MESSAGE_TEXTS.copied.success : MESSAGE_TEXTS.copied.failure)
   }
 
   const handleClickExportButton = async(e: React.MouseEvent<HTMLButtonElement>) => {

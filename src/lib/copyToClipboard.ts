@@ -1,7 +1,11 @@
 export const copyToClipboard = async (param: { text: string }) => {
+  let isSuccess: boolean
+
   try {
     await navigator.clipboard.writeText(param.text)
+    isSuccess = true
   } catch {
-    console.error("Failed to copy text.")
+    isSuccess = false
   }
+  return isSuccess
 }
