@@ -13,7 +13,7 @@ export const MESSAGE_TEXTS = {
 export const PAGE_TEXTS = {
   header: "Title & URL Capturer",
   input: {
-    placeholder: "File name (no extension)"
+    placeholder: "Filename (no extension)"
   },
   button: {
     copy: "Copy to Clipboard",
