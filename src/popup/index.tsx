@@ -1,11 +1,12 @@
 import '@picocss/pico/css/pico.min.css';
 import { getFormattedTitleAndURL } from '~lib/getTabsInfo';
+import { validFilename } from '~lib/validFilename';
 import "../style/style.css";
 
 import { useState } from "react";
 import { MESSAGE_TEXTS, PAGE_TEXTS } from '~config/parameter';
 import { copyToClipboard } from '~lib/copyToClipboard';
-import { exportToMarkDown } from '~lib/exportToMD';
+import { exportToMarkDown } from '~lib/exportToMarkdown';
 
 const IndexPopup = () => {
   const [message, setMessage] = useState(MESSAGE_TEXTS.default)
@@ -18,14 +19,17 @@ const IndexPopup = () => {
     e.preventDefault()
     const formattedTitleAndURL: string = await getFormattedTitleAndURL()
     const result: boolean = await copyToClipboard({ text: formattedTitleAndURL })
-    setMessage(result ? MESSAGE_TEXTS.copied.success : MESSAGE_TEXTS.copied.failure)
+    setMessage(result ? MESSAGE_TEXTS.copy.success : MESSAGE_TEXTS.copy.failure)
   }
 
   const handleClickExportButton = async(e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    const formattedTitleAndURL: string = await getFormattedTitleAndURL()
-    await exportToMarkDown({title: inputData, content: formattedTitleAndURL})
-    setMessage(MESSAGE_TEXTS.exported)
+    const isValidFilename: boolean = validFilename({filename: inputData})
+    if (isValidFilename) {
+      const formattedTitleAndURL: string = await getFormattedTitleAndURL()
+      await exportToMarkDown({title: inputData, content: formattedTitleAndURL})
+    }
+    setMessage(isValidFilename ? MESSAGE_TEXTS.export.success : MESSAGE_TEXTS.export.failure)
   }
 
   return (

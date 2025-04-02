@@ -1,10 +1,13 @@
 export const MESSAGE_TEXTS = {
   default: "Let's Copy or Export !",
-  copied: {
+  copy: {
     success: "Copied to Clipboard !",
-    failure: "Copy to Clipboard Failed !"
+    failure: "Copy to Clipboard Failed"
   },
-  exported: "Exported to MarkDown !"
+  export: {
+    success: "Exported to MarkDown !",
+    failure: "Invalid Filename Blocks Export"
+  }
 }
 
 export const PAGE_TEXTS = {
